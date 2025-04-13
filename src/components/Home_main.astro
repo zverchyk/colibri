@@ -1,13 +1,54 @@
 ---
-import slider_1 from "../assets/slider-1.png";
-import slider_2 from "../assets/slider-2.png";
-import slider_3 from "../assets/slider-3.png";
+import ImageSlider from "../components/ImageSlider.jsx";
+import img1 from "../assets/slider-1.png";
+import img2 from "../assets/slider-2.png";
+import img3 from "../assets/slider-3.png";
+import "../styles/slider.css";
 ---
 
 <div class="home_container">
-    <div class="main_slidder"><img src={slider_1.src} alt="" /></div>
+    <ImageSlider
+        images={[img1, img2, img3]}
+        sliderNumber="preact-slider-main"
+        client:load
+    />
+
     <div class="small_sliders">
-        <div class="slider"><img src={slider_2.src} alt="" /></div>
-        <div class="slider"><img src={slider_3.src} alt="" /></div>
+        <ImageSlider
+            images={[img1, img2, img3]}
+            sliderNumber="preact-slider-2"
+            client:load
+        />
+        <ImageSlider
+            images={[img1, img2, img3]}
+            sliderNumber="preact-slider-3"
+            client:load
+        />
     </div>
 </div>
+
+<style>
+    .home_container {
+        width: 100%;
+        max-width: 1300px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .small_sliders {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .preact-slider-main {
+        width: 70%;
+        height: 400px;
+    }
+</style>

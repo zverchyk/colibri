@@ -1,0 +1,50 @@
+.preact-slider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-buttons button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.slider-dots .dot.active {
+    background-color: #757575;
+}

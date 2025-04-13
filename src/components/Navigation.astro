@@ -3,8 +3,39 @@
 ---
 
 <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/tags/">Tags</a>
+    <a href="/">HOME</a>
+    <a href="/games/">GAMES</a>
+    <a href="/about/">ABOUT</a>
+    <a href="/blog/">PEOPLE</a>
+    <a href="/news/">NEWS</a>
+    <a href="/contact/">CONTACT</a>
 </div>
+
+<style>
+    @font-face {
+        font-family: "SpecialElite";
+        src: url("../assets/fonts/Special_Elite/SpecialElite-Regular.ttf");
+    }
+    a {
+        color: var(--font);
+        font-size: 20px;
+        font-family: "SpecialElite", sans-serif;
+        text-decoration: none;
+        margin: 10px;
+        padding: 5px 10px; /* Optional: adds space inside for better hover border */
+        display: inline-block; /* Ensures border shows properly */
+        border: 2px solid transparent; /* Reserve space for border */
+    }
+
+    a:hover {
+        background-color: var(--font-background);
+        border-radius: 6px; /* Optional: for rounded edges */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Optional: vertically center links */
+        gap: 10px; /* Optional: spacing between items */
+    }
+</style>

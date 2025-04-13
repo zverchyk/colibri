@@ -1,3 +1,14 @@
-img {
-    width: 200px;
+/* CSS RGB Colors */
+:root {
+    --background: rgb(61, 52, 42);
+
+    --font: rgb(58, 15, 22);
+
+    --layout: rgb(98, 84, 80);
+
+    --slider: rgb(125, 49, 49);
+
+    --font-background: rgb(151, 141, 120);
+
+
 }
