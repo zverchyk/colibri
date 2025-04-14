@@ -1,6 +1,11 @@
 ---
 import logo from "../assets/logo.png";
 import Socials from "./SocialLinks.jsx";
+import instagram from "../assets/icons/instagram.png";
+import tiktok from "../assets/icons/tik-tok.png";
+import twitter from "../assets/icons/twitter.png";
+import whatsapp from "../assets/icons/whatsapp.png";
+import youtube from "../assets/icons/youtube.png";
 ---
 
 <footer>
@@ -13,15 +18,14 @@ import Socials from "./SocialLinks.jsx";
             <img src={logo.src} alt="" />
         </div>
         <div class="socials">
-            <Socials socialIcon="X" socialLink="https://x.com" />
-            <Socials socialIcon="Facebook" socialLink="https://facebook.com" />
-            <Socials socialIcon="Bluesky" socialLink="https://bluesky.com" />
-            <Socials socialIcon="Beeper" socialLink="https://beeper.com" />
-            <Socials socialIcon="YouTube" socialLink="https://youtube.com" />
+            <Socials socialIcon={twitter} socialLink="https://x.com" />
+            <Socials socialIcon={tiktok} socialLink="https://tiktok.com" />
+            <Socials socialIcon={whatsapp} socialLink="https://whatsapp.com" />
             <Socials
-                socialIcon="Instagram"
+                socialIcon={instagram}
                 socialLink="https://instagram.com"
             />
+            <Socials socialIcon={youtube} socialLink="https://youtube.com" />
         </div>
     </div>
     <p>copyright</p>

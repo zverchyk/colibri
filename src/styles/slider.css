@@ -1,24 +1,49 @@
+.home_container {
+    max-width: 1300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
 .preact-slider {
     position: relative;
-    max-width: 600px;
-    margin: auto;
+    width: 100%;
     overflow: hidden;
+    margin: 5px 0;
+
+}
+
+.preact-slider:hover {
+    background-color: black;
+    opacity: 0.6;
+}
+
+.slider-image {
+    width: 100%;
 }
 
 .slider-image img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slider-buttons {
     position: absolute;
     top: 50%;
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+
 }
+
+
 
 .slider-buttons button {
     background: rgba(0, 0, 0, 0.6);
@@ -30,8 +55,13 @@
 }
 
 .slider-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     margin-top: 10px;
+    transform: translateY(-50%);
+
 }
 
 .slider-dots .dot {
@@ -47,4 +77,27 @@
 
 .slider-dots .dot.active {
     background-color: #757575;
+}
+
+
+
+.small_sliders {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.preact-slider-main {
+    width: 100%;
+    height: 400px;
+}
+
+
+.preact-slider-main .slider-image {
+    width: 100%;
+    height: 400px;
 }
