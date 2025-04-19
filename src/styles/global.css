@@ -11,8 +11,30 @@
     --font-background: rgb(151, 141, 120);
 
 
+
+}
+
+@font-face {
+    font-family: 'Anton';
+    src: url('../assets/fonts/Anton/Anton-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    color: var(--font-background);
 }
 
 .social_icon {
     width: 20px;
+}
+
+img {
+    width: 300px;
+}
+
+.title {
+    font-family: 'Anton';
+    font-size: 50px;
+
 }

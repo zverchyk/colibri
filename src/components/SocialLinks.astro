@@ -1,0 +1,27 @@
+---
+import Socials from "./SocialLink.jsx";
+import instagram from "../assets/icons/instagram.png";
+import tiktok from "../assets/icons/tik-tok.png";
+import twitter from "../assets/icons/twitter.png";
+import whatsapp from "../assets/icons/whatsapp.png";
+import youtube from "../assets/icons/youtube.png";
+
+const { type } = Astro.props;
+---
+
+<div class={`socials ${type}`}>
+    <Socials socialIcon={twitter} socialLink="https://x.com" />
+    <Socials socialIcon={tiktok} socialLink="https://tiktok.com" />
+    <Socials socialIcon={whatsapp} socialLink="https://whatsapp.com" />
+    <Socials socialIcon={instagram} socialLink="https://instagram.com" />
+    <Socials socialIcon={youtube} socialLink="https://youtube.com" />
+</div>
+
+<style>
+    .contact-socials {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px;
+    }
+</style>

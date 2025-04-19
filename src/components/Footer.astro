@@ -1,11 +1,6 @@
 ---
 import logo from "../assets/logo.png";
-import Socials from "./SocialLinks.jsx";
-import instagram from "../assets/icons/instagram.png";
-import tiktok from "../assets/icons/tik-tok.png";
-import twitter from "../assets/icons/twitter.png";
-import whatsapp from "../assets/icons/whatsapp.png";
-import youtube from "../assets/icons/youtube.png";
+import Socials from "./SocialLinks.astro";
 ---
 
 <footer>
@@ -17,16 +12,8 @@ import youtube from "../assets/icons/youtube.png";
         <div class="logo">
             <img src={logo.src} alt="" />
         </div>
-        <div class="socials">
-            <Socials socialIcon={twitter} socialLink="https://x.com" />
-            <Socials socialIcon={tiktok} socialLink="https://tiktok.com" />
-            <Socials socialIcon={whatsapp} socialLink="https://whatsapp.com" />
-            <Socials
-                socialIcon={instagram}
-                socialLink="https://instagram.com"
-            />
-            <Socials socialIcon={youtube} socialLink="https://youtube.com" />
-        </div>
+
+        <Socials />
     </div>
     <p>copyright</p>
 </footer>
@@ -35,8 +22,6 @@ import youtube from "../assets/icons/youtube.png";
     footer {
         text-align: center;
         width: 100%;
-        max-width: 1300px;
-        margin: 0 auto;
         background-color: var(--layout);
         color: var(--font);
     }

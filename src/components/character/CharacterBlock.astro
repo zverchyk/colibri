@@ -1,0 +1,15 @@
+---
+const { name, img } = Astro.props;
+---
+
+<div class="character_block">
+    <img src={img} alt="" />
+    <div class="character_name">{name}</div>
+</div>
+
+<style>
+    .character_name {
+        font-family: "Anton";
+        font-size: 30px;
+    }
+</style>

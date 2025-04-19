@@ -1,0 +1,15 @@
+---
+import GameBlock from "./games/GameBlock.astro";
+import slider from "../assets/slider-2.png";
+const info =
+    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas deserunt libero adipisci harum aliquam tempora labore fugiat nisi ipsam quibusdam, ex hic commodi atque, sit earum, iusto molestiae facere quis!";
+---
+
+<div class="games_container">
+    <div class="games_title title">GAMES</div>
+    <div class="games_blocks">
+        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
+        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
+        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
+    </div>
+</div>

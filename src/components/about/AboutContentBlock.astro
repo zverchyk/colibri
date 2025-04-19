@@ -1,0 +1,41 @@
+---
+import pic from "../../assets/slider-1.png";
+const { blockNumber } = Astro.props;
+---
+
+<div class={`about_content__block ${blockNumber}`}>
+    <img src={pic.src} class="about_content-pic" alt="" />
+    <div class="about_content-text">
+        <h1 class="content-title">Lorem, ipsum.</h1>
+        <p class="content-text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+            libero corporis vitae atque voluptas officiis maiores odit minima?
+            Temporibus, distinctio dolorem? Hic obcaecati a vitae, doloribus
+            iure doloremque aliquam natus velit itaque voluptatum ducimus cum
+            consequuntur, nostrum consequatur dolore. At ex recusandae magnam
+            molestias officiis voluptatum in iusto architecto accusamus.
+        </p>
+    </div>
+</div>
+
+<style>
+    .about_content__block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+    }
+    .about_content-pic {
+    }
+    .about_content-text {
+        width: 50%;
+        text-align: start;
+    }
+    .block-1 {
+        padding-top: 0;
+    }
+    .block-2 {
+        flex-direction: row-reverse;
+    }
+</style>

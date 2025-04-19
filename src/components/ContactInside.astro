@@ -1,0 +1,132 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<div class="contact_container">
+    <div class="contact_main-block">
+        <div class="contact_title-block">
+            <div class="contact_title title">CONTACT</div>
+            <div class="contact_subtitle">
+                LEAVE US ANYTHING YOU WANT IN TERMS OF PERSONAL EXPRESIONS
+            </div>
+        </div>
+        <div class="contact_input-message">
+            <label for="message">Message</label>
+            <textarea id="message" class="message"></textarea>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" class="email" />
+
+            <button type="submit" class="send">SEND</button>
+        </div>
+    </div>
+    <div class="contact_social-media">
+        <label for="">Social Media</label>
+        <SocialLinks type="contact-socials" />
+    </div>
+</div>
+<style>
+    label {
+        display: block;
+        font-family: "Anton";
+        font-size: 25px;
+    }
+    .contact_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact_title {
+        text-align: end;
+        line-height: 1;
+        display: inline-block;
+    }
+
+    .contact_title-block {
+        margin: 10px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+    }
+    .contact_main-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        align-items: start;
+        position: relative;
+    }
+    .contact_social-media {
+        text-align: center;
+        width: 20%;
+    }
+
+    .contact_input-message {
+        position: relative;
+        width: 100%;
+        align-items: start;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "label-message label-message"
+            "message message"
+            "label-email label-email"
+            "email send";
+
+        margin: 10px 0;
+        grid-auto-rows: min-content;
+        row-gap: 5px;
+        font-family: Arial, sans-serif;
+        color: lightgray;
+    }
+
+    label[for="message"] {
+        grid-area: label-message;
+    }
+
+    textarea.message {
+        grid-area: message;
+        padding: 0;
+        height: 200px;
+        background-color: gray;
+        border: none;
+        border-radius: 5px;
+        resize: none;
+        font-size: 16px;
+        align-self: start;
+        margin: 0;
+    }
+
+    label[for="email"] {
+        grid-area: label-email;
+    }
+
+    input.email {
+        grid-area: email;
+        background-color: gray;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        color: white;
+    }
+
+    button.send {
+        grid-area: send;
+        background-color: #333;
+        color: lightgray;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        min-width: 150px;
+    }
+    button.send:hover {
+        background-color: white;
+        opacity: 0.6;
+    }
+</style>

@@ -1,0 +1,35 @@
+---
+const { pic, email, name, role } = Astro.props;
+---
+
+<div class="creator">
+    <img src={pic} class="creator_pic" alt="" />
+    <ul class="creator_info">
+        <h1 class="creator_name">{name}</h1>
+        <p>{role}</p>
+        <a class="creator_email" href={email}>{email}</a>
+    </ul>
+</div>
+
+<style>
+    .creator {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+    }
+    .creator_pic {
+        width: 30%;
+        height: auto;
+    }
+    .creator_info {
+        text-align: start;
+    }
+    .creator_email {
+        color: var(--font-background);
+        text-decoration: none;
+    }
+    .creator_email:hover {
+        color: black;
+        opacity: 0.6;
+    }
+</style>

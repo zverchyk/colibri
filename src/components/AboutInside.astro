@@ -1,0 +1,67 @@
+---
+import ContentBlock from "./about/AboutContentBlock.astro";
+import PersonBlock from "./about/AboutPersonBlock.astro";
+import rick from "../assets/icons/rick.png";
+---
+
+<div class="about_container">
+    <h1 class="about_title title">ABOUT</h1>
+    <div class="about_content">
+        <ContentBlock blockNumber="block-1" />
+        <ContentBlock blockNumber="block-2" />
+    </div>
+    <div class="about_people">
+        <h1 class="about_people__title title">PEOPLE</h1>
+        <div class="people_container">
+            <PersonBlock
+                pic={rick.src}
+                name="Rick"
+                email="rick@morty.com"
+                role="protal maker"
+            />
+            <PersonBlock
+                pic={rick.src}
+                name="Rick"
+                email="rick@morty.com"
+                role="protal maker"
+            />
+            <PersonBlock
+                pic={rick.src}
+                name="Rick"
+                email="rick@morty.com"
+                role="protal maker"
+            />
+            <PersonBlock
+                pic={rick.src}
+                name="Rick"
+                email="rick@morty.com"
+                role="protal maker"
+            />
+            <PersonBlock
+                pic={rick.src}
+                name="Rick"
+                email="rick@morty.com"
+                role="protal maker"
+            />
+        </div>
+    </div>
+</div>
+
+<style>
+    .about_title {
+        align-self: start;
+        justify-self: start;
+    }
+    .about_container {
+        text-align: center;
+        max-width: 95%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    .people_container {
+        background-color: var(--slider);
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+</style>

@@ -1,0 +1,33 @@
+---
+import CharacterBlock from "./character/CharacterBlock.astro";
+
+import zuko from "../assets/pics/Zuko.webp";
+---
+
+<div class="characters_container">
+    <h1 class="characters_title title">Characters</h1>
+    <div class="characters_blocks">
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+        <CharacterBlock name="Zuko" img={zuko.src} />
+    </div>
+</div>
+
+<style>
+    .characters_blocks {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 10px 0;
+    }
+</style>

@@ -1,0 +1,62 @@
+---
+const { title, date, img } = Astro.props;
+---
+
+<div class="news_element">
+    <div class="element_img">
+        <img src={img} alt="there should've been some kind of pic" />
+        <a class="img_hover" href="">READ MORE</a>
+    </div>
+    <div class="element_info">
+        <div class="element_title">{title}</div>
+        <div class="element_date">{date}</div>
+    </div>
+</div>
+
+<style>
+    .news_element {
+    }
+
+    .element_img {
+        position: relative;
+    }
+
+    .element_img img {
+    }
+
+    .img_hover {
+        font-family: "Anton";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+
+        background-color: var(--slider);
+        color: white;
+        font-size: 25px;
+        text-decoration: none;
+        opacity: 0;
+    }
+
+    .element_img:hover .img_hover {
+        opacity: 1;
+    }
+    .element_img:hover img {
+        opacity: 0.5;
+    }
+
+    .element_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .element_title {
+    }
+
+    .element_date {
+    }
+</style>

@@ -1,0 +1,26 @@
+---
+import NewsElement from "./news/NewsElement.astro";
+
+import pic from "../assets/slider-3.png";
+---
+
+<div class="news_container">
+    <div class="news_title title">NEWS</div>
+    <div class="news_block">
+        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+    </div>
+</div>
+
+<style>
+    .news_block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+</style>

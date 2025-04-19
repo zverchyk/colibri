@@ -18,19 +18,23 @@ import "../styles/global.css";
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<Header />
-		<slot />
-		<Footer />
+		<div class="wrapper">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
 </html>
 
 <style>
 	html,
 	body {
-		/* height: 100%; */
 		margin: 0;
-
 		background-color: var(--background);
 		/* flex-direction: column; */
+	}
+	.wrapper {
+		max-width: 1300px;
+		margin: 0 auto;
 	}
 </style>
