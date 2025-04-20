@@ -1,23 +1,24 @@
 ---
+import Characters from "../pages/characters.astro";
 import CharacterBlock from "./character/CharacterBlock.astro";
 
-import zuko from "../assets/pics/Zuko.webp";
+const allCharacters = Object.values(
+    import.meta.glob("../pages/characters/*.md", { eager: true }),
+);
 ---
 
 <div class="characters_container">
     <h1 class="characters_title title">Characters</h1>
     <div class="characters_blocks">
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
-        <CharacterBlock name="Zuko" img={zuko.src} />
+        {
+            allCharacters.map((character: any) => (
+                <CharacterBlock
+                    name={character.frontmatter.title}
+                    img={character.frontmatter.image}
+                    characterLink={character.url}
+                />
+            ))
+        }
     </div>
 </div>
 

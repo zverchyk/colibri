@@ -1,4 +1,5 @@
 ---
+const { pageTitle } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -15,7 +16,7 @@ import "../styles/global.css";
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
 		/>
-		<title>Astro Basics</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<div class="wrapper">

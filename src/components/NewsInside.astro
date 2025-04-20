@@ -2,16 +2,25 @@
 import NewsElement from "./news/NewsElement.astro";
 
 import pic from "../assets/slider-3.png";
+const allNews = Object.values(
+    import.meta.glob("../pages/news/*.md", { eager: true }),
+);
 ---
 
 <div class="news_container">
     <div class="news_title title">NEWS</div>
     <div class="news_block">
-        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
-        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
-        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
-        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
-        <NewsElement img={pic.src} title="Givie" date="Sep 13, 2024" />
+        {
+            allNews.map((post: any) => (
+                <NewsElement
+                    img={pic.src}
+                    url={post.url}
+                    title={post.frontmatter.title}
+                    date={post.pubDate}
+                />
+            ))
+        }
+        <!-- <NewsElement img={pic.src} url="fjjf" title="jack" date="today" /> -->
     </div>
 </div>
 

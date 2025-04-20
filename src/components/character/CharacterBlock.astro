@@ -1,10 +1,12 @@
 ---
-const { name, img } = Astro.props;
+const { name, img, characterLink } = Astro.props;
+const example = true;
 ---
 
-<div class="character_block">
+<div class="character_block aboutHover">
     <img src={img} alt="" />
     <div class="character_name">{name}</div>
+    <a href={characterLink} target="_blank" rel="noopener">ABOUT</a>
 </div>
 
 <style>

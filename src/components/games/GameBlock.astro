@@ -1,5 +1,6 @@
 ---
-const { title, video, info } = Astro.props;
+const { title, video, info, gameLink, discordLink, steamLink, downloadLink } =
+    Astro.props;
 import discord from "../../assets/icons/discord.webp";
 import steam from "../../assets/icons/steam.png";
 import download from "../../assets/icons/download.png";
@@ -9,9 +10,9 @@ import download from "../../assets/icons/download.png";
     <div class="game-block-left">
         <h1 class="title">{title}</h1>
         <div class="social-icons">
-            <a href=""> <img src={discord.src} alt="" /></a>
-            <a href=""> <img src={steam.src} alt="" /></a>
-            <a href=""> <img src={download.src} alt="" /></a>
+            <a href={discordLink}> <img src={discord.src} alt="" /></a>
+            <a href={steamLink}> <img src={steam.src} alt="" /></a>
+            <a href={downloadLink}> <img src={download.src} alt="" /></a>
         </div>
     </div>
 
@@ -19,11 +20,11 @@ import download from "../../assets/icons/download.png";
         <img src={video} alt="Something About Me" />
     </div>
 
-    <div class="game-block-right">
+    <div class="game-block-right aboutHover">
         <p>
             {info}
         </p>
-        <button>ABOUT</button>
+        <a href={gameLink} target="_blank" rel="noopener">ABOUT</a>
     </div>
 </div>
 
@@ -82,28 +83,6 @@ import download from "../../assets/icons/download.png";
         color: #d4c3aa;
     }
     .game-block-right {
-        position: relative;
         padding: 10px;
-    }
-    .game-block-right button {
-        font-family: "Anton";
-        background-color: var(--slider);
-        color: var(--font);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 8px 16px;
-        border: none;
-        font-weight: bold;
-        cursor: pointer;
-        opacity: 0;
-    }
-    .game-block-right:hover button {
-        opacity: 1;
-    }
-    .game-block-right:hover {
-        background-color: rgb(79, 77, 77);
-        /* opacity: 0.4; */
     }
 </style>

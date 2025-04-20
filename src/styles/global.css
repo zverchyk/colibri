@@ -38,3 +38,37 @@ img {
     font-size: 50px;
 
 }
+
+.aboutHover {
+    position: relative;
+}
+
+.aboutHover a {
+    display: block;
+    font-family: "Anton";
+    background-color: var(--slider);
+    color: var(--font);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.aboutHover:hover a {
+    opacity: 1;
+}
+
+.aboutHover:hover img {
+    opacity: 0.5;
+}
+
+.aboutHover:hover {
+    background-color: rgb(79, 77, 77);
+    /* opacity: 0.4; */
+}

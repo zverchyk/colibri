@@ -1,6 +1,10 @@
 ---
 import GameBlock from "./games/GameBlock.astro";
-import slider from "../assets/slider-2.png";
+
+const allGames = Object.values(
+    import.meta.glob("../pages/games/*.md", { eager: true }),
+);
+
 const info =
     " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas deserunt libero adipisci harum aliquam tempora labore fugiat nisi ipsam quibusdam, ex hic commodi atque, sit earum, iusto molestiae facere quis!";
 ---
@@ -8,8 +12,18 @@ const info =
 <div class="games_container">
     <div class="games_title title">GAMES</div>
     <div class="games_blocks">
-        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
-        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
-        <GameBlock title="Palace of Mind" video={slider.src} info={info} />
+        {
+            allGames.map((game: any) => (
+                <GameBlock
+                    title={game.frontmatter.title}
+                    video={game.frontmatter.image}
+                    info={game.frontmatter.description}
+                    gameLink={game.url}
+                    discordLink={game.frontmatter.discordLink}
+                    steamLink={game.frontmatter.steamLink}
+                    downloadLink={game.frontmatter.downloadLink}
+                />
+            ))
+        }
     </div>
 </div>
