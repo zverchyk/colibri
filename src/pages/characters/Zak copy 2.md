@@ -1,15 +1,11 @@
 ---
-layout: ../../layouts/GameLayout.astro
-title: 'Dragon Place'
+layout: ../../layouts/CharacterLayout.astro
+title: 'Zak'
 pubDate: 2022-07-01
 description: 'Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.'
-discordLink: 'discord.com'
-steamLink: 'https://store.steampowered.com/'
-downloadLink: 'fanbase.com'
-
-
-image: '/images/slider-1.png'
-
+author: 'Astro Learner'
+image: '/images/Zuko.webp'
+    
 tags: ["astro", "blogging", "learning in public"]
 
 ---

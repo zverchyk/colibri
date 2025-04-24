@@ -22,14 +22,15 @@ const { blockNumber } = Astro.props;
     .about_content__block {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        gap: 15px;
         padding: 10px;
     }
     .about_content-pic {
+        flex: 1;
     }
     .about_content-text {
-        width: 50%;
         text-align: start;
     }
     .block-1 {

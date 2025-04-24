@@ -1,19 +1,16 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
-title: 'Palace of mind'
+layout: ../../layouts/NewsLayout.astro
+title: 'First release of the game'
 pubDate: 2022-07-01
 description: 'Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.'
 author: 'Astro Learner'
-discordLink: 'discord.com'
-steamLink: 'https://store.steampowered.com/'
-downloadLink: 'fanbase.com'
-
-
-image: '/images/slider-1.png'
-
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 
 ---
+
 
 
 

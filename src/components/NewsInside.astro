@@ -1,7 +1,6 @@
 ---
 import NewsElement from "./news/NewsElement.astro";
 
-import pic from "../assets/slider-3.png";
 const allNews = Object.values(
     import.meta.glob("../pages/news/*.md", { eager: true }),
 );
@@ -13,7 +12,7 @@ const allNews = Object.values(
         {
             allNews.map((post: any) => (
                 <NewsElement
-                    img={pic.src}
+                    img={post.frontmatter.image.url}
                     url={post.url}
                     title={post.frontmatter.title}
                     date={post.pubDate}

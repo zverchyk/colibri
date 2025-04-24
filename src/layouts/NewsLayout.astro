@@ -1,0 +1,172 @@
+---
+import Layout from "./Layout.astro";
+import dislikeButton from "../assets/icons/dislike.png";
+import likeButton from "../assets/icons/like.png";
+import discussButton from "../assets/icons/messenger.png";
+const { frontmatter } = Astro.props;
+---
+
+<Layout pageTitle={frontmatter.title}>
+    <div class="newPage__container">
+        <div class="title__block">
+            <h1 class="newsPage__title title">{frontmatter.title}</h1>
+            <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+        </div>
+
+        <img class="newsPage__img" src={frontmatter.image.url} alt="" />
+        <p class="newsPage__info"></p>
+
+        <slot />
+        <div class="tagsAndFeedback">
+            <div class="tags">
+                {
+                    frontmatter.tags.map((tag: string) => (
+                        <a class="tag" href={`/tags/${tag}`}>
+                            #{tag}
+                        </a>
+                    ))
+                }
+            </div>
+            <div class="newsPage__feedbackBox">
+                <div class="newsPage__rateBox">
+                    <div class="rateScore">
+                        <img src={likeButton.src} alt="" />
+                        <div class="rateNumber">0</div>
+                    </div>
+                    <button class="rateUp"
+                        ><img src={likeButton.src} alt="" /> Rate Up</button
+                    >
+                    <button class="rateDown"
+                        ><img src={dislikeButton.src} alt="" /></button
+                    >
+                    <div class="commentScore">
+                        <img src={discussButton.src} alt="" />
+                        <div class="comentNumber">0</div>
+                    </div>
+                    <button class="discussButton">Discuss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .title__block {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+    }
+    .newPage__container {
+        width: 100%;
+    }
+    .newsPage__img {
+        width: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: #00539f;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em; /* more readable spacing */
+    }
+
+    .tag {
+        height: 20px;
+        display: inline-flex; /* better control than inline-block */
+        align-items: center; /* vertically center content */
+        margin: 0; /* avoid double spacing from both sides */
+        padding: 0.25em 0.75em;
+        font-size: 20px;
+        line-height: 0.1; /* avoid too tight or too loose lines */
+        border-radius: 0.5em;
+        background-color: #f8fcfd;
+    }
+
+    .tag:hover {
+        background-color: #44c8e9;
+    }
+    .tagsAndFeedback {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em;
+        background-color: #1b1f29;
+    }
+
+    .commentScore img,
+    .rateUp img,
+    .rateDown img,
+    .rateScore img {
+        width: 30px;
+    }
+
+    .newsPage__feedbackBox {
+        display: flex;
+        justify-content: end;
+        padding: 1em;
+        background-color: #1b1f29; /* dark background */
+    }
+
+    .newsPage__rateBox {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        background-color: #2a2f3b;
+        padding: 0.75em 1em;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .rateScore {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+        color: #4da6ff; /* light blue text */
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .rateUp,
+    .rateDown,
+    .discussButton {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+        background-color: #3a3f4f;
+        border: none;
+        color: #ccc;
+        padding: 0.4em 0.75em;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .rateUp:hover,
+    .rateDown:hover,
+    .discussButton:hover {
+        background-color: #4a4f60;
+    }
+
+    .rateDown img,
+    .rateUp img,
+    .discussButton img {
+        filter: brightness(0.8);
+    }
+
+    .commentScore {
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+        margin-left: 1em;
+        color: #4da6ff; /* match thumbs-up color */
+        font-weight: bold;
+    }
+
+    .commentScore img {
+    }
+</style>
