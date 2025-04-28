@@ -1,24 +1,12 @@
 ---
-import Characters from "../pages/characters.astro";
-import CharacterBlock from "./character/CharacterBlock.astro";
-
-const allCharacters = Object.values(
-    import.meta.glob("../pages/characters/*.md", { eager: true }),
-);
+import CharacterContainer from "./character/CharactersContainerBlock.astro";
 ---
 
 <div class="characters_container">
     <h1 class="characters_title title">Characters</h1>
     <div class="characters_blocks">
-        {
-            allCharacters.map((character: any) => (
-                <CharacterBlock
-                    name={character.frontmatter.title}
-                    img={character.frontmatter.image}
-                    characterLink={character.url}
-                />
-            ))
-        }
+        <!-- to show all characters use "<CharacterBlock name={0} /> " -->
+        <CharacterContainer names={0} />
     </div>
 </div>
 

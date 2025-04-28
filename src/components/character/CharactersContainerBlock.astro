@@ -1,0 +1,38 @@
+---
+import CharacterBlock from "./CharacterBlock.astro";
+const { names } = Astro.props;
+const characters = Object.values(
+    import.meta.glob("../../pages/characters/*.md", { eager: true }),
+);
+---
+
+<div class="characters_container_block">
+    {
+        characters
+            .filter((character: any) => {
+                if (names === 0) return true; // show all
+                if (Array.isArray(names)) {
+                    return names.includes(character.frontmatter.name); // true if name is inside list
+                }
+                return false; // otherwise skip
+            })
+            .map((character: any) => {
+                const { name: charName, image } = character.frontmatter;
+                return (
+                    <CharacterBlock
+                        image={image}
+                        name={charName}
+                        link={character.url}
+                    />
+                );
+            })
+    }
+</div>
+
+<style>
+    .characters_container_block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+</style>

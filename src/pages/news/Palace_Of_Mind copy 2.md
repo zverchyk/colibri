@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: 'Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.'
 author: 'Astro Learner'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
+    url: '/images/slider-1.png'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 

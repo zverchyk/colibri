@@ -4,22 +4,44 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout pageTitle={frontmatter.title}>
-    <img src={frontmatter.image} alt="" />
-    <h1>{frontmatter.title}</h1>
-    <p>Written by {frontmatter.author}</p>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-    <p>Description: {frontmatter.description}</p>
-    <div class="tags">
-        Tags:
-        {
-            frontmatter.tags.map((tag: string) => (
-                <p class="tag">
-                    #<a href={`/tags/${tag}`}>{tag}</a>
-                </p>
-            ))
-        }
+    <div class="characterPage_container">
+        <div class="characterPage_mainInfo">
+            <h1 class="characterPage_title title">{frontmatter.name}</h1>
+            <p class="characterPage_about">{frontmatter.about}</p>
+            <div class="tags">
+                You can meet the hero here:
+                {
+                    frontmatter.tags.map((tag: string) => (
+                        <p class="tag">
+                            #<a href={`/games/${tag}`}>{tag}</a>
+                        </p>
+                    ))
+                }
+            </div>
+        </div>
+        <div class="characterPage_shortInfo">
+            <img src={frontmatter.image} alt="" />
+            <h1>Biographical Information</h1>
+            <div class="shortInfo_block">
+                <div class="shortInfo_block_one">
+                    <div class="shortInfo_block_title"></div>
+                    <ul>
+                        <li>Age: {frontmatter.age}</li>
+                        <li>Full name: {frontmatter.fullname}</li>
+                        <li>Sex: {frontmatter.sex}</li>
+                    </ul>
+                </div>
+                <div class="shortInfo_block_two">
+                    <div class="shortInfo_block_title"></div>
+                    <ul>
+                        <li>Age: {frontmatter.age}</li>
+                        <li>Full name: {frontmatter.fullname}</li>
+                        <li>Sex: {frontmatter.sex}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <slot />
 </Layout>
 
 <style>
@@ -43,5 +65,58 @@ const { frontmatter } = Astro.props;
     }
     .tag:hover {
         background-color: #44c8e9;
+    }
+
+    .characterPage_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .characterPage_mainInfo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 0 10px 0 0;
+    }
+
+    .characterPage_title {
+        /* Title styles */
+    }
+
+    .characterPage_about {
+        /* About paragraph */
+    }
+
+    .characterPage_shortInfo {
+        /* Short info section */
+    }
+
+    .shortInfo_block {
+        /* Block that contains two sections */
+    }
+    .shortInfo_block li {
+        list-style: none;
+    }
+
+    .shortInfo_block_one {
+        /* First short info block */
+    }
+
+    .shortInfo_block_two {
+        /* Second short info block */
+    }
+
+    .shortInfo_block_title {
+        /* Title inside each short info block */
+    }
+
+    .tags {
+        /* Tags container */
+    }
+
+    .tag {
+        /* Individual tag item */
     }
 </style>

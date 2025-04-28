@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/CharacterLayout.astro
-title: 'Zak'
+name: 'Kevin'
 pubDate: 2022-07-01
 description: 'Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.'
 author: 'Astro Learner'
 image: '/images/Zuko.webp'
     
-tags: ["astro", "blogging", "learning in public"]
+tags: ["Palace_Of_Mind"]
 
 ---
 
