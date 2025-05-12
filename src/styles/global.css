@@ -15,8 +15,8 @@
 }
 
 @font-face {
-    font-family: 'Anton';
-    src: url('../assets/fonts/Anton/Anton-Regular.ttf');
+    font-family: 'TpotmENG';
+    src: url('src/assets/fonts/TPOTM-ENG-font/TpotmEng-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -45,7 +45,7 @@ img {
 
 .aboutHover a {
     display: block;
-    font-family: "Anton";
+    font-family: "TpotmENG", sans-serif;
     background-color: var(--slider);
     color: var(--font);
     position: absolute;
@@ -70,7 +70,6 @@ img {
 
 .aboutHover:hover {
     background-color: rgb(79, 77, 77);
-    /* opacity: 0.4; */
 }
 
 h1 {
