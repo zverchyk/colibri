@@ -15,8 +15,8 @@
 }
 
 @font-face {
-    font-family: 'TpotmENG';
-    src: url('src/assets/fonts/TPOTM-ENG-font/TpotmEng-Regular.ttf');
+    font-family: 'TpotmEng';
+    src: url('../assets/fonts/TPOTM-ENG-font/TpotmEng-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -45,7 +45,7 @@ img {
 
 .aboutHover a {
     display: block;
-    font-family: "TpotmENG", sans-serif;
+    font-family: "TpotmEng", sans-serif;
     background-color: var(--slider);
     color: var(--font);
     position: absolute;
